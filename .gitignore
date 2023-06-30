@@ -1,0 +1,14 @@
+node_modules/
+dev.db
+dist/
+src/generated/
+.idea/
+*.env
+yarn.lock
+
+!.env.docker-compose.env
+.env.example.env
+
+.DS_Store
+
+**/.DS_Store
