@@ -1,4 +1,2 @@
-# BetterGPT
-GPT, but better
+# Smart Agent Install
 
-[insrtuctions tbd]
