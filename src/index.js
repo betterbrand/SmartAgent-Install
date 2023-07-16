@@ -11,10 +11,15 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
-    webPreferences: {
+    icon: 'imgs/SmartAgent_mega.ico' // replace with the path to your icon file
+webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
+
   });
+
+  
+
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
