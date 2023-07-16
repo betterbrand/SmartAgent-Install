@@ -1,5 +1,4 @@
-# BetterGPT
-GPT, but better
+# Smart Agent Install
 
 This is Vercel's AI Chatbot deployed within an ElectronJS application.
 
