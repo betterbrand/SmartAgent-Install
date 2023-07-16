@@ -1,24 +1,87 @@
 {
-  "name": "better-gpt",
-  "productName": "better-gpt",
+  "name": "@betterbrand/better-gpt",
+  "productName": "Better GPT",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Chat Bot",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "build": "electron-builder",
+    "lint": "echo \"No linting configured\"",
+    "make-mac": "npx @electron-forge/cli make --platform darwin"
+  },
+  "build": {
+    "appId": "com.betterbrand.bettergpt",
+    "productName": "Better GPT",
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "category": "public.app.category.messaging",
+      "icon": "src/assets/icon.icns",
+      "artifactName": "${productName}-Web-Setup.${ext}",
+      "target": "dmg"
+    },
+    "win": {
+      "icon": "src/assets/icon.ico",
+      "target": [
+        "nsis"
+      ],
+      "artifactName": "${productName}-Windows.${ext}",
+      "publisherName": "Better Brand Management."
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false,
+      "perMachine": false
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "src/assets/icon.png",
+      "category": "Utility"
+    }
   },
   "keywords": [],
   "author": {
-    "name": "wolf",
-    "email": "billodida420@gmail.com"
+    "name": "better brand",
+    "email": "scott@betterbrand.com"
   },
   "license": "MIT",
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "./assets/icon",
+        "executableName": "better-gpt"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "electron_quick_start"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.2.1",

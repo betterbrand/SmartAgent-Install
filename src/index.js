@@ -8,9 +8,15 @@ if (require('electron-squirrel-startup')) {
 
 const createWindow = () => {
   // Create the browser window.
+
+  const iconPath = path.join(__dirname, 'icon.png');
+
+  
+
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    icon : iconPath,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
@@ -18,6 +24,8 @@ const createWindow = () => {
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
+
+ 
 
   mainWindow.loadURL('https://agent-install-bkz6.vercel.app/');
   // Open the DevTools.
