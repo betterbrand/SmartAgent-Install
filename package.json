@@ -51,6 +51,7 @@
   },
   "license": "MIT",
   "dependencies": {
+
     "electron-squirrel-startup": "^1.0.0"
   },
   "config": {
@@ -84,6 +85,7 @@
     }
   },
   "devDependencies": {
+    "electron-builder": "^24.4.0",
     "@electron-forge/cli": "^6.2.1",
     "@electron-forge/maker-deb": "^6.2.1",
     "@electron-forge/maker-rpm": "^6.2.1",
